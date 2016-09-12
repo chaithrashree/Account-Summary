@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!-- ***************************************************** {COPYRIGHT-TOP} ***
+* Licensed Materials - Property of IBM
+* Restricted Materials of IBM
+*
+* 5725-E59
+*
+* (C) Copyright IBM Corp. 2006, 2011  All Rights Reserved.
+*
+* US Government Users Restricted Rights - Use, duplication, or
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+********************************************************** {COPYRIGHT-END} -->
+<!-- Version 8.0.0-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+	<xsd:element name="DWLExtension">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ExtendedObject" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="CommonExtensionBObj" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="CommonExtensionBObj" abstract="true" type="CommonExtensionBObjType"/>
+		<xsd:complexType name="CommonExtensionBObjType"/>
+	
+	<xsd:element name="TCRMExtension">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ExtendedObject" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="CommonExtensionBObj" minOccurs="0" maxOccurs="unbounded"/>
+	
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ExtendedObject" type="xsd:string"/>
+	
+
+</xsd:schema>

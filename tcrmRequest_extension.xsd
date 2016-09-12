@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- ***************************************************** {COPYRIGHT-TOP} ***
+* Licensed Materials - Property of IBM
+* Restricted Materials of IBM
+*
+* 5725-E59
+*
+* (C) Copyright IBM Corp. 2006, 2011  All Rights Reserved.
+*
+* US Government Users Restricted Rights - Use, duplication, or
+* disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+********************************************************** {COPYRIGHT-END} --><!-- Version 8.0.0-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="myTCRM.xsd"/>
+	<xsd:element name="DWLOrganizationBObjExt" substitutionGroup="CommonExtensionBObj" type="DWLOrganizationBObjExtType"/>
+		<xsd:complexType name="DWLOrganizationBObjExtType">
+		<xsd:complexContent>
+			<xsd:extension base="CommonExtensionBObjType">
+			<xsd:sequence>
+				<xsd:element minOccurs="0" ref="ObjectReferenceId"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" ref="DWLDefaultedSourceValueBObj"/>
+			</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+		</xsd:complexType>
+	
+	<xsd:element name="DWLPersonBObjExt" substitutionGroup="CommonExtensionBObj" type="DWLPersonBObjExtType"/>
+		<xsd:complexType name="DWLPersonBObjExtType">
+		<xsd:complexContent>
+			<xsd:extension base="CommonExtensionBObjType">
+			<xsd:sequence>
+				<xsd:element minOccurs="0" ref="ObjectReferenceId"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="0" ref="DWLDefaultedSourceValueBObj"/>
+			</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+		</xsd:complexType>
+	
+	<xsd:element name="DepositProductBObj" substitutionGroup="CommonBObj" type="DepositProductBObjType"/>
+	<xsd:complexType name="DepositProductBObjType">
+		<xsd:complexContent>
+	    	<xsd:extension base="FinancialProductBObjType">
+			<xsd:sequence>
+				<xsd:element maxOccurs="1" minOccurs="0" name="Deposit" type="xsd:string"/>
+				<xsd:element maxOccurs="1" minOccurs="0" ref="DepositProductLastUpdateDate"/>
+				<xsd:element maxOccurs="1" minOccurs="0" ref="DepositProductLastUpdateUser"/>
+				<xsd:element maxOccurs="1" minOccurs="0" ref="DepositProductLastUpdateTxId"/>			
+			</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+    <xsd:element name="DepositProductLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="DepositProductLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="DepositProductLastUpdateTxId" type="xsd:string"/>
+
+<!-- start of xsd for CISExtensions  -->  
+ 
+    
+    <xsd:element name="XContractCompanionBObjExt" substitutionGroup="CommonExtensionBObj" type="XContractCompanionBObjExtType"/>         
+    
+    <xsd:complexType name="XContractCompanionBObjExtType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractCompanionId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DesignatedPartyTIN"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DesignatedPartyTINType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DesignatedPartyTINValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AccountLegalTitle1"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AccountLegalTitle2"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AccountLegalTitle3"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ClosedProductDescription"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractShortName"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ProductCategoryType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ProductCategoryValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ProductAccountType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ProductAccountValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DetailTrackingStatusType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DetailTrackingStatusValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractCompanionLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractCompanionLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractCompanionLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="ContractCompanionId" type="xsd:string"/>
+    <xsd:element name="AccountLegalTitle1" type="xsd:string"/>
+    <xsd:element name="AccountLegalTitle2" type="xsd:string"/>
+    <xsd:element name="AccountLegalTitle3" type="xsd:string"/>
+    <xsd:element name="ClosedProductDescription" type="xsd:string"/>
+    <xsd:element name="DesignatedPartyTIN" type="xsd:string"/>
+    <xsd:element name="DesignatedPartyTINType" type="xsd:string"/>
+    <xsd:element name="DesignatedPartyTINValue" type="xsd:string"/>
+    <xsd:element name="ContractShortName" type="xsd:string"/>
+    <xsd:element name="ProductAccountType" type="xsd:string"/>
+    <xsd:element name="ProductAccountValue" type="xsd:string"/>
+    <xsd:element name="DetailTrackingStatusType" type="xsd:string"/>
+    <xsd:element name="DetailTrackingStatusValue" type="xsd:string"/>
+    <xsd:element name="ProductCategoryType" type="xsd:string"/>
+    <xsd:element name="ProductCategoryValue" type="xsd:string"/>
+    <xsd:element name="ContractCompanionLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="ContractCompanionLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="ContractCompanionLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XContactMethodCompanionBObjExt" substitutionGroup="CommonExtensionBObj" type="XContactMethodCompanionBObjExtType"/>         
+    
+    <xsd:complexType name="XContactMethodCompanionBObjExtType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContactMethodCompanionId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PhoneCountryCode"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PhoneExtensionNumber"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XContactMethodCompanionLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XContactMethodCompanionLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XContactMethodCompanionLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="ContactMethodCompanionId" type="xsd:string"/>
+    <xsd:element name="PhoneExtensionNumber" type="xsd:string"/>
+    <xsd:element name="XContactMethodCompanionLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XContactMethodCompanionLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XContactMethodCompanionLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XOrganizationBObjExt" substitutionGroup="CommonExtensionBObj" type="XOrganizationBObjExtType"/>         
+    
+    <xsd:complexType name="XOrganizationBObjExtType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OrganizationCompanionId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="StockSymbol"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="StockExchangeType"/>
+				<xsd:element maxOccurs="1" minOccurs="0" ref="StockExchangeValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DateIncorporated"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="FiscalYear"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="EntityOrgUnderLawsOfType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="EntityOrgUnderLawsOfValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="CertificateOfIncorporationType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="CertificateOfIncorporationValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="NumberOfLocations"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XOrganizationLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XOrganizationLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XOrganizationLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+                <xsd:element minOccurs="0" ref="XStiContactBObj" />
+				<xsd:element minOccurs="0" ref="XOfficerNumberBObj"	maxOccurs="unbounded" />
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="OrganizationCompanionId" type="xsd:string"/>
+    <xsd:element name="CertificateOfIncorporationType" type="xsd:string"/>
+    <xsd:element name="CertificateOfIncorporationValue" type="xsd:string"/>
+    <xsd:element name="DateIncorporated" type="xsd:string"/>
+    <xsd:element name="FiscalYear" type="xsd:string"/>
+    <xsd:element name="NumberOfLocations" type="xsd:string"/>
+    <xsd:element name="EntityOrgUnderLawsOfType" type="xsd:string"/>
+    <xsd:element name="EntityOrgUnderLawsOfValue" type="xsd:string"/>
+    <xsd:element name="StockExchangeType" type="xsd:string"/>
+    <xsd:element name="StockExchangeValue" type="xsd:string"/>
+    <xsd:element name="StockSymbol" type="xsd:string"/>
+    <xsd:element name="XOrganizationLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XOrganizationLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XOrganizationLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XPartyAddressCompanionBObjExt" substitutionGroup="CommonExtensionBObj" type="XPartyAddressCompanionBObjExtType"/>         
+    
+    <xsd:complexType name="XPartyAddressCompanionBObjExtType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyAddressCompanionId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="HoldMailType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="InvalidAddressReasonDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyAddressCompanionLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyAddressCompanionLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyAddressCompanionLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="PartyAddressCompanionId" type="xsd:string"/>
+    <xsd:element name="HoldMailType" type="xsd:string"/>
+    <xsd:element name="InvalidAddressReasonDate" type="xsd:string"/>
+    <xsd:element name="PartyAddressCompanionLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="PartyAddressCompanionLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="PartyAddressCompanionLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XPartyIdentificationCompanionBObjExt" substitutionGroup="CommonExtensionBObj" type="XPartyIdentificationCompanionBObjExtType"/>         
+    
+    <xsd:complexType name="XPartyIdentificationCompanionBObjExtType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyIdentificationCompanionId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="IssueDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyIdentificationCompanionLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyIdentificationCompanionLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyIdentificationCompanionLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="PartyIdentificationCompanionId" type="xsd:string"/>
+    <xsd:element name="PartyIdentificationCompanionLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="PartyIdentificationCompanionLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="PartyIdentificationCompanionLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XAddressCompanionBObjExt" substitutionGroup="CommonExtensionBObj" type="XAddressCompanionBObjExtType"/>         
+    
+    <xsd:complexType name="XAddressCompanionBObjExtType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AddressCompanionId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AddressStructureType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AddressLineFour"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DeliveryPointValidation"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="LastVerifiedDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="FormatingOverrideReasonType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="FormatingOverrideReasonValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AddressCompanionLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AddressCompanionLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AddressCompanionLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+                <xsd:element minOccurs="0" ref="XAddressDetailBObj" />
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="AddressCompanionId" type="xsd:string"/>
+    <xsd:element name="AddressLineFour" type="xsd:string"/>
+    <xsd:element name="AddressStructureType" type="xsd:string"/>
+    <xsd:element name="DeliveryPointValidation" type="xsd:string"/>
+    <xsd:element name="FormatingOverrideReasonType" type="xsd:string"/>
+    <xsd:element name="FormatingOverrideReasonValue" type="xsd:string"/>
+    <xsd:element name="AddressCompanionLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="AddressCompanionLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="AddressCompanionLastUpdateTxId" type="xsd:string"/>
+<!-- end of xsd for CISExtensions -->  
+ 
+<!-- start of xsd for CISAdditions  -->  
+ 
+    
+    <xsd:element name="XOfficerNumberBObj" substitutionGroup="CommonExtensionBObj" type="XOfficerNumberBObjType"/>         
+    
+    <xsd:complexType name="XOfficerNumberBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerNumberIdPK"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerNumber"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="StartDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerRelationRoleType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerRelationRoleValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="EndDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerNumberLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerNumberLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="OfficerNumberLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="TCRMExtension"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="OfficerNumberIdPK" type="xsd:string"/>
+    <xsd:element name="OfficerNumber" type="xsd:string"/>
+    <xsd:element name="OfficerRelationRoleType" type="xsd:string"/>
+    <xsd:element name="OfficerRelationRoleValue" type="xsd:string"/>
+    <xsd:element name="OfficerNumberLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="OfficerNumberLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="OfficerNumberLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XAccountTallyBObj" substitutionGroup="CommonExtensionBObj" type="XAccountTallyBObjType"/>         
+    
+    <xsd:complexType name="XAccountTallyBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AccountCategory"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="DominantCIN"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AccountType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AccountValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="Count"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ExpiryDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XAccountTallyKey"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XAccountTallyLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XAccountTallyLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XAccountTallyLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+                <!-- xsd:element maxOccurs="1" minOccurs="0" ref="TCRMExtension"/-->
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="AccountCategory" type="xsd:string"/>
+    <xsd:element name="DominantCIN" type="xsd:string"/>
+    <xsd:element name="Count" type="xsd:string"/>
+    <xsd:element name="XAccountTallyKey" type="xsd:string"/>
+    <xsd:element name="XAccountTallyLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XAccountTallyLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XAccountTallyLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XContractNicknameBObj" substitutionGroup="CommonExtensionBObj" type="XContractNicknameBObjType"/>         
+    
+    <xsd:complexType name="XContractNicknameBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="NicknameId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ContractNickname"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ProductType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ProductValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="AdminContractId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="BusOrgunitId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XContractNicknameLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XContractNicknameLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XContractNicknameLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="TCRMExtension"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="NicknameId" type="xsd:string"/>
+    <xsd:element name="ContractNickname" type="xsd:string"/>
+    <xsd:element name="XContractNicknameLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XContractNicknameLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XContractNicknameLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XStiContactBObj" substitutionGroup="CommonExtensionBObj" type="XStiContactBObjType"/>         
+    
+    <xsd:complexType name="XStiContactBObjType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="0" ref="ObjectReferenceId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PartyId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="RiskAssessmentFormType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="RiskAssessmentFormValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="RiskAssessmentFormSourceSystemType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="RiskAssessmentFormSourceSystemValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="CountryOfTaxResidencyType"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="CountryOfTaxResidencyValue"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XStiContactLastUpdateTxId"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XStiContactLastUpdateUser"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="XStiContactLastUpdateDate"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="PrimaryKeyBObj"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="TCRMExtension"/>
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="RiskAssessmentFormType" type="xsd:string"/>
+    <xsd:element name="RiskAssessmentFormValue" type="xsd:string"/>
+    <xsd:element name="RiskAssessmentFormSourceSystemType" type="xsd:string"/>
+    <xsd:element name="RiskAssessmentFormSourceSystemValue" type="xsd:string"/>
+    <xsd:element name="CountryOfTaxResidencyType" type="xsd:string"/>
+    <xsd:element name="CountryOfTaxResidencyValue" type="xsd:string"/>
+    <xsd:element name="XStiContactLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XStiContactLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XStiContactLastUpdateTxId" type="xsd:string"/>
+<xsd:element name="XPersonalPreferenceBObj" substitutionGroup="CommonBObj" type="XPersonalPreferenceBObjType"/>         
+    
+    <xsd:complexType name="XPersonalPreferenceBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonBObjType">
+            <xsd:sequence minOccurs="1" maxOccurs="1">
+                <xsd:element ref="ComponentID" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ObjectReferenceId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PersonalPreferenceId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="EntityName" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="InstancePk" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="AdminContractId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="BusOrgunitId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ProductType" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PersonalPreferenceTpCdType" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PersonalPreferenceTpCdValue" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PreferenceValueTxt" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="StartDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="EndDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="SourceIdentifyType" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceLastUpdateDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceLastUpdateTxId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceLastUpdateUser" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceHistActionCode" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceHistCreateDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceHistCreatedBy" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceHistEndDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XPersonalPreferenceHistoryIdPK" minOccurs="0" maxOccurs="1"/>
+                <!--  <xsd:element ref="DWLStatus" minOccurs="0" maxOccurs="1"/>-->
+                <xsd:element ref="TCRMExtension" minOccurs="0" maxOccurs="1" />
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="PersonalPreferenceId" type="xsd:string"/>
+    <xsd:element name="InstancePk" type="xsd:string"/>
+    <xsd:element name="PersonalPreferenceTpCdType" type="xsd:string"/>
+    <xsd:element name="PersonalPreferenceTpCdValue" type="xsd:string"/>
+    <xsd:element name="PreferenceValueTxt" type="xsd:string"/>
+    <xsd:element name="SourceIdentifyType" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceLastUpdateTxId" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceHistActionCode" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceHistCreateDate" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceHistCreatedBy" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceHistEndDate" type="xsd:string"/>
+    <xsd:element name="XPersonalPreferenceHistoryIdPK" type="xsd:string"/>
+
+<!-- end of xsd for CISPersonalPreferences -->   
+<!-- end of xsd for CISAdditions -->   
+ 
+<!-- start CIS "Logical" extension here -->
+
+    <xsd:element name="CISCIPValidationBObj" substitutionGroup="CommonExtensionBObj" type="CISCIPValidationBObjType"/>         
+
+		<xsd:complexType name="CISCIPValidationBObjType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+	      			<!-- xsd:element ref="DWLStatus" minOccurs="0" maxOccurs="1"/-->
+	            	<xsd:element minOccurs="0" ref="PartyId"/>
+	            	<xsd:element minOccurs="0" ref="CIPComplianceInd"/>
+	            	<xsd:element minOccurs="0" ref="PartyExemptInd"/>
+	            	<xsd:element minOccurs="0" ref="ValidPhysicalAddressInd"/>
+	            	<xsd:element minOccurs="0" ref="ValidIdDocumentInd"/>
+	            	<xsd:element minOccurs="0" ref="ValidTINInd"/>
+	            	<xsd:element minOccurs="0" ref="ValidDateOfBirthInd"/>
+	            	<xsd:element minOccurs="0" ref="TINAppliedForInd"/>
+	            	<xsd:element minOccurs="0" ref="ValidW8AddressInd"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+  	<xsd:element name="CIPComplianceInd" type="xsd:string"/>
+  	<xsd:element name="PartyExemptInd" type="xsd:string"/>
+	<xsd:element name="ValidPhysicalAddressInd" type="xsd:string"/>
+	<xsd:element name="ValidIdDocumentInd" type="xsd:string"/>
+	<xsd:element name="ValidTINInd" type="xsd:string"/>
+	<xsd:element name="ValidDateOfBirthInd" type="xsd:string"/>
+	<xsd:element name="TINAppliedForInd" type="xsd:string"/>
+	<xsd:element name="ValidW8AddressInd" type="xsd:string"/>
+	
+
+    <xsd:element name="XPartyGroupingAssociationBObjExt" substitutionGroup="CommonExtensionBObj" type="XPartyGroupingAssociationBObjExtType"/>         
+		<xsd:complexType name="XPartyGroupingAssociationBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="AdminPartyId"/>
+				<xsd:element ref="AdminSystemType"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+
+    <xsd:element name="XPartyGroupingBObjExt" substitutionGroup="CommonExtensionBObj" type="XPartyGroupingBObjExtType"/>         
+		<xsd:complexType name="XPartyGroupingBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="TCRMPartyGroupingValueBObj" maxOccurs="unbounded"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+
+    <xsd:element name="XContractSearchCompanionBObjExt" substitutionGroup="CommonExtensionBObj" type="XContractSearchCompanionBObjExtType"/>         
+		<xsd:complexType name="XContractSearchCompanionBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="ObjectReferenceId" minOccurs="0"/>
+				<xsd:element ref="DesignatedPartyTIN" minOccurs="0"/>
+				<xsd:element ref="DesignatedPartyTINType" minOccurs="0"/>
+				<xsd:element ref="PartyTIN" minOccurs="0"/>
+				<xsd:element ref="PartyTINType" minOccurs="0"/>
+				<xsd:element ref="AdminPartyId" minOccurs="0"/>
+				<xsd:element ref="AdminSystemTp" minOccurs="0"/>					
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+	<xsd:element name="PartyTIN" type="xsd:string"/>
+	<xsd:element name="PartyTINType" type="xsd:string"/>	
+	<xsd:element name="AdminSystemTp" type="xsd:string"/>		
+
+    <xsd:element name="XPartySearchBObjExt" substitutionGroup="CommonExtensionBObj" type="XPartySearchBObjExtType"/>         
+		<xsd:complexType name="XPartySearchBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="PhoneCountryCode" minOccurs="0"/>
+				<xsd:element ref="CISPartyPageControlBObj" minOccurs="0"/>
+				<xsd:element ref="ContractStatusType" minOccurs="0"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+
+    <xsd:element name="XPersonSearchBObjExt" substitutionGroup="CommonExtensionBObj" type="XPersonSearchBObjExtType"/>         
+		<xsd:complexType name="XPersonSearchBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="NameUsageType" minOccurs="0"/>
+				<xsd:element ref="PhoneCountryCode" minOccurs="0"/>
+				<xsd:element ref="CISPartyPageControlBObj" minOccurs="0"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+
+    <xsd:element name="XOrganizationSearchBObjExt" substitutionGroup="CommonExtensionBObj" type="XOrganizationSearchBObjExtType"/>         
+		<xsd:complexType name="XOrganizationSearchBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="NameUsageType" minOccurs="0"/>
+				<xsd:element ref="PhoneCountryCode" minOccurs="0"/>
+				<xsd:element ref="XOfficerNumberBObj" minOccurs="0"/>
+				<xsd:element ref="CISPartyPageControlBObj" minOccurs="0"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+ 	
+    <xsd:element name="XPersonBObjExt" substitutionGroup="CommonExtensionBObj" type="XPersonBObjExtType"/>         
+		<xsd:complexType name="XPersonBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="XStiContactBObj" minOccurs="0"/>
+				<xsd:element ref="XOfficerNumberBObj" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="XAccountTallyBObj" minOccurs="0" maxOccurs="unbounded"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+
+
+    <xsd:element name="XFSPartyBObj" substitutionGroup="CommonExtensionBObj" type="XFSPartyBObjType"/>         
+		<xsd:complexType name="XFSPartyBObjType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="unbounded" minOccurs="1">
+				<xsd:element ref="ComponentID" minOccurs="0"/>
+				<xsd:element ref="ObjectReferenceId" minOccurs="0"/>
+				<xsd:element ref="MaxReturn" minOccurs="0"/>
+				<xsd:element ref="TCRMContractBObj" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:choice minOccurs="0">
+					<xsd:element ref="TCRMPartyBObj"/>
+					<xsd:element ref="TCRMPersonBObj"/>
+					<xsd:element ref="TCRMOrganizationBObj"/>
+				</xsd:choice>
+				<xsd:element ref="XContractNicknameBObj" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="XPersonalPreferenceBObj" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="TCRMExtension" minOccurs="0"/>
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+	
+	<xsd:element name="ContractRelThreshold" type="xsd:string"/>
+	<xsd:element name="ValidIndicator" type="xsd:string"/>
+	<xsd:element name="Message" type="xsd:string"/>
+	<xsd:element name="ThresholdExceededIndicator" type="xsd:string"/>
+
+    <xsd:element name="XContractRelationshipBObjExt" substitutionGroup="CommonExtensionBObj" type="XContractRelationshipBObjExtType"/>         
+		<xsd:complexType name="XContractRelationshipBObjExtType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="ContractRelThreshold" minOccurs="0"/>
+				<xsd:element ref="ValidIndicator" minOccurs="0"/>
+				<xsd:element ref="Message" minOccurs="0"/>		
+				<xsd:element ref="ThresholdExceededIndicator" minOccurs="0"/>		
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+
+ 
+
+    <xsd:element name="CISPartyPageControlBObj" substitutionGroup="CommonExtensionBObj" type="CISPartyPageControlBObjType"/>         
+		<xsd:complexType name="CISPartyPageControlBObjType">
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType">
+            <xsd:sequence maxOccurs="1" minOccurs="1">
+				<xsd:element ref="CursorRecord" minOccurs="0"/>
+				<xsd:element ref="PageNumber" minOccurs="0"/>
+				<xsd:element ref="PageSize" minOccurs="0"/>
+				<xsd:element ref="FirstRecord" minOccurs="0"/>
+				<xsd:element ref="LastRecord" minOccurs="0"/>
+				<xsd:element ref="TotalRecords" minOccurs="0"/>
+				<xsd:element ref="InitialRequestInd" minOccurs="0"/>
+				<xsd:element ref="MoreRecordsAvailable" minOccurs="0"/>
+				<xsd:element ref="ObjectType" minOccurs="0"/>
+				<xsd:element ref="ObjectTieBreaker" minOccurs="0"/>
+				<xsd:element ref="ObjectEffectiveDate" minOccurs="0"/>
+				<xsd:element ref="NextLastName" minOccurs="0"/>
+				<xsd:element ref="NextGivenNameOne" minOccurs="0"/>	
+				<xsd:element ref="NextGivenNameTwo" minOccurs="0"/>
+				<xsd:element ref="NextOrganizationName" minOccurs="0"/>				
+	      	</xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+        </xsd:complexType>
+	
+	<xsd:element name="CursorRecord" type="xsd:string"/>
+	<xsd:element name="PageNumber" type="xsd:string"/>
+	<xsd:element name="PageSize" type="xsd:string"/>
+	<xsd:element name="FirstRecord" type="xsd:string"/>
+	<xsd:element name="LastRecord" type="xsd:string"/>
+	<xsd:element name="TotalRecords" type="xsd:string"/>
+	<xsd:element name="InitialRequestInd" type="xsd:string"/>
+	<xsd:element name="MoreRecordsAvailable" type="xsd:string"/>
+	<xsd:element name="ObjectType" type="xsd:string"/>
+	<xsd:element name="ObjectTieBreaker" type="xsd:string"/>
+	<xsd:element name="ObjectEffectiveDate" type="xsd:string"/>
+	<xsd:element name="NextLastName" type="xsd:string"/>
+	<xsd:element name="NextGivenNameOne" type="xsd:string"/>
+	<xsd:element name="NextGivenNameTwo" type="xsd:string"/>
+	<xsd:element name="NextOrganizationName" type="xsd:string"/>
+	
+	
+	<xsd:element name="XAddressDetailBObj" substitutionGroup="CommonExtensionBObj" type="XAddressDetailBObjType"/>         
+    
+    <xsd:complexType name="XAddressDetailBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence minOccurs="1" maxOccurs="1">
+                <xsd:element ref="ObjectReferenceId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="AddressDetailIdPK" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="AddressIdPK" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="OwnershipStatus" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="MailabilityScore" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ResidenceBusinessSiteIndicator" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="MultiFamilyDwellingIndicator" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="VacancyIndicator" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="OccupancyScore" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="CommercialMailSiteIndicator" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PrisonIndicator" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XAddressDetailLastUpdateTxId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XAddressDetailLastUpdateUser" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XAddressDetailLastUpdateDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PrimaryKeyBObj" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="TCRMExtension" minOccurs="0" maxOccurs="1" />
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="AddressDetailIdPK" type="xsd:string"/>
+    <xsd:element name="OwnershipStatus" type="xsd:string"/>
+    <xsd:element name="MailabilityScore" type="xsd:string"/>
+    <xsd:element name="ResidenceBusinessSiteIndicator" type="xsd:string"/>
+    <xsd:element name="MultiFamilyDwellingIndicator" type="xsd:string"/>
+    <xsd:element name="VacancyIndicator" type="xsd:string"/>
+    <xsd:element name="OccupancyScore" type="xsd:string"/>
+    <xsd:element name="CommercialMailSiteIndicator" type="xsd:string"/>
+    <xsd:element name="PrisonIndicator" type="xsd:string"/>
+    <xsd:element name="XAddressDetailLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XAddressDetailLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XAddressDetailLastUpdateTxId" type="xsd:string"/>
+    
+    <xsd:element name="XContactMethodDetailBObj" substitutionGroup="CommonExtensionBObj" type="XContactMethodDetailBObjType"/>         
+    
+    <xsd:complexType name="XContactMethodDetailBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence minOccurs="1" maxOccurs="1">
+                <xsd:element ref="ObjectReferenceId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ContactMethodDetailIdPK" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ContactMethodIdPK" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="OwnershipStatus" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="MatchedIndicator" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XContactMethodDetailLastUpdateTxId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XContactMethodDetailLastUpdateUser" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XContactMethodDetailLastUpdateDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PrimaryKeyBObj" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="TCRMExtension" minOccurs="0" maxOccurs="1" />
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="ContactMethodDetailIdPK" type="xsd:string"/>
+    <xsd:element name="MatchedIndicator" type="xsd:string"/>
+    <xsd:element name="XContactMethodDetailLastUpdateDate" type="xsd:string"/>
+    <xsd:element name="XContactMethodDetailLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XContactMethodDetailLastUpdateTxId" type="xsd:string"/>
+	<xsd:element name="XServiceUsageTrackingBObj" substitutionGroup="CommonExtensionBObj" type="XServiceUsageTrackingBObjType"/>         
+    
+    <xsd:complexType name="XServiceUsageTrackingBObjType">
+        <xsd:annotation>
+            <xsd:documentation>
+                
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="CommonExtensionBObjType"> 
+            <xsd:sequence minOccurs="1" maxOccurs="1">
+                <xsd:element ref="ObjectReferenceId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ServiceUsageId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PartyId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ProductType" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ProductValue" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ServiceType" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ServiceValue" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="LastUsedDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="GPRAccountNumber" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="InitialFundingDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="GPRIssueDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="ServiceStatus" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XServiceUsageTrackingLastUpdateTxId" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XServiceUsageTrackingLastUpdateUser" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="XServiceUsageTrackingLastUpdateDate" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="PrimaryKeyBObj" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="TCRMExtension" minOccurs="0" maxOccurs="1" />
+            </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="ServiceUsageId" type="xsd:string"/>
+    <xsd:element name="ServiceType" type="xsd:string"/>
+    <xsd:element name="ServiceValue" type="xsd:string"/>
+    <xsd:element name="GPRAccountNumber" type="xsd:string"/>
+    <xsd:element name="InitialFundingDate" type="xsd:string"/>
+    <xsd:element name="GPRIssueDate" type="xsd:string"/>
+    <xsd:element name="ServiceStatus" type="xsd:string"/>
+    <xsd:element name="XServiceUsageTrackingLastUpdateTxId" type="xsd:string"/>
+    <xsd:element name="XServiceUsageTrackingLastUpdateUser" type="xsd:string"/>
+    <xsd:element name="XServiceUsageTrackingLastUpdateDate" type="xsd:string"/>
+	
+<!-- end CIS "Logical" extension here -->
+		
+</xsd:schema>
